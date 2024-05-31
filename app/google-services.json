@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "371973076316",
+    "project_id": "petguardian-fc369",
+    "storage_bucket": "petguardian-fc369.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371973076316:android:22837026233289e9bb7d99",
+        "android_client_info": {
+          "package_name": "com.example.petguardian"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqjQdQSLExudkC5NbwH23k5gdmU_yhgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
