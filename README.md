@@ -26,8 +26,26 @@ Mantenha todas as informações importantes sobre o seu pet centralizadas em um 
 No PetGuardian, você pode registrar detalhes como nome, raça, idade, peso, histórico médico, vacinas, alergias e outras informações relevantes. 
 Tenha um registro completo da saúde e do bem-estar do seu pet sempre à mão.
 
+### Desenvolvimento:
+- Banco de Dados
+  * Firebase Authentication -> Para cadastro e autenticação de usuários.
+  * Firestore Database -> Para o armazenamento dos dados.
+- Recursos
+  * strings, colors, styles e themes .xml
+  * fragmentos
+  * notificações
+  * menu
+  * imagens
+- Funcionalidades
+  * Cadastro de Usuário
+  * Registro de informações
+  * Lista de Tarefas(criação, edição e remoção)
+- Outros
+  * Tratamento de erros
+
 ### Informações Adicionais:
 App inteiramente feito por Fernando Braga!\
 Nome: Fernando Arantes Braga.\
 RGA: 2021.1904.044-0\
 Email: fernando.braga@ufms.br
+
