@@ -4,4 +4,7 @@
     <string name="text_cadastro">Crie uma conta clicando aqui</string>
     <string name="title_cadastro">Cadastre-se</string>
     <string name="salvar">Salvar</string>
+   
+    <string name="open_nav">Open Drawer</string>
+    <string name="close_nav">Close Drawer</string>
 </resources>

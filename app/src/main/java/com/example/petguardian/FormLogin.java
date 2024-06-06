@@ -111,7 +111,7 @@ public class FormLogin extends AppCompatActivity {
     }
 
     private void TelaPrincipal(){
-        Intent intent = new Intent(FormLogin.this, UserProfile.class);
+        Intent intent = new Intent(FormLogin.this, NavigationDrawer.class);
         startActivity(intent);
         finish();
     }
