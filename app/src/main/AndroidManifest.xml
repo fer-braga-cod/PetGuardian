@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,17 +15,17 @@
         android:theme="@style/Theme.PetGuardian"
         tools:targetApi="31">
         <activity
-            android:name=".NavigationDrawer"
+            android:name=".list.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.NavigationDrawer"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".UserProfile"
+            android:name=".login.FormCadastro"
             android:exported="false" />
         <activity
-            android:name=".FormCadastro"
-            android:exported="false" />
-        <activity
-            android:name=".FormLogin"
+            android:name=".login.FormLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
