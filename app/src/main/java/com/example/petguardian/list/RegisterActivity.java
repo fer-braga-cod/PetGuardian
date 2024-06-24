@@ -190,6 +190,8 @@ public class RegisterActivity extends AppCompatActivity {
                         timestamp2 = calendar.getTimeInMillis();
                         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                         Intent intent = new Intent(RegisterActivity.this, AlarmReceiver.class);
+                        String taskID = documentReference.getId();
+                        intent.putExtra("taskId", taskID);
                         pendingIntent = PendingIntent.getBroadcast(RegisterActivity.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
                         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, timestamp2, AlarmManager.INTERVAL_DAY, pendingIntent);
                         Toast.makeText(RegisterActivity.this, "Alarm Set", Toast.LENGTH_SHORT).show();
