@@ -58,7 +58,7 @@
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:alpha="0.5"
+            android:alpha="0.6"
             android:background="@android:color/black"/>
 
         <LinearLayout
@@ -105,26 +105,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text=""
+                tools:text="19:30"
                 android:singleLine="true"
-                android:alpha="0.5"
+                android:alpha="0.7"
                 android:id="@+id/time"
-                android:textSize="12sp"
+                android:textSize="18sp"
                 android:textColor="@android:color/black"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:text="COMPLETED"
-                android:textSize="12sp"
-                android:id="@+id/status"
-                android:layout_gravity="right"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
 
         </LinearLayout>
 

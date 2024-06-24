@@ -1,6 +1,11 @@
 package com.example.petguardian.list;
-public class DataClass {
 
+import com.google.firebase.firestore.DocumentId;
+
+
+public class DataClass {
+    @DocumentId
+    private String id;
     private String nome;
     private String descricao;
     private Long data;
@@ -44,5 +49,13 @@ public class DataClass {
 
     public void setTempo(String tempo) {
         this.tempo = tempo;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

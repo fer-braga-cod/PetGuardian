@@ -1,6 +1,13 @@
 package com.example.petguardian.list;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +17,9 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.petguardian.R;
+import com.example.petguardian.alarm.AlarmReceiver;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -27,9 +32,9 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.sql.Time;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -42,6 +47,8 @@ public class RegisterActivity extends AppCompatActivity {
     private Date selectedDate;
     private int hora, minuto;
     private String tempo;
+    private AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         IniciarComponentes();
+        createNotificationChannel();
 
         bt_Data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,6 +181,19 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        long timestamp2;
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(selectedDate); // Definir a data selecionada
+                        calendar.set(Calendar.HOUR_OF_DAY, hora); // Definir a hora selecionada
+                        calendar.set(Calendar.MINUTE, minuto); // Definir o minuto selecionado
+                        calendar.set(Calendar.SECOND, 0); // Definir o segundo como 0
+                        timestamp2 = calendar.getTimeInMillis();
+                        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                        Intent intent = new Intent(RegisterActivity.this, AlarmReceiver.class);
+                        pendingIntent = PendingIntent.getBroadcast(RegisterActivity.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+                        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, timestamp2, AlarmManager.INTERVAL_DAY, pendingIntent);
+                        Toast.makeText(RegisterActivity.this, "Alarm Set", Toast.LENGTH_SHORT).show();
+
                         Snackbar snackbar = Snackbar.make(v, "Task created successfully!", Snackbar.LENGTH_SHORT);
                         snackbar.setBackgroundTint(Color.GREEN);
                         snackbar.setTextColor(Color.WHITE);
@@ -196,5 +217,17 @@ public class RegisterActivity extends AppCompatActivity {
                         snackbar.show();
                     }
                 });
+    }
+
+    private void createNotificationChannel(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "akchannel";
+            String desc = "Channel for Alarm Manager";
+            int imp = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("androidknowledge", name, imp);
+            channel.setDescription(desc);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }

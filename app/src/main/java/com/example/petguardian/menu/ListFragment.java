@@ -80,6 +80,7 @@ public class ListFragment extends Fragment {
                         dataList.add(task);
                     }
                 }
+                adapter.ordenarTarefas();
                 adapter.notifyDataSetChanged();
             }
 
