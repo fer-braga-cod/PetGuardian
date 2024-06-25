@@ -34,6 +34,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Calendar;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -66,6 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.tempo.setText(dataList.get(position).getTempo());
         long timestamp = dataList.get(position).getData();
         holder.options.setOnClickListener(view -> showPopUpMenu(view, position));
+
         try {
             outputDateString = dateFormat.format(new Date(timestamp));
 

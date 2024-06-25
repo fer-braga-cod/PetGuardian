@@ -7,8 +7,5 @@
         android:title="Delete"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/menuComplete"
-        android:title="Complete"
-        app:showAsAction="ifRoom" />
+
 </menu>

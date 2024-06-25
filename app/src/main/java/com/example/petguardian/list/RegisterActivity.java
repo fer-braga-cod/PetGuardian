@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.petguardian.R;
+import com.example.petguardian.alarm.AlarmManagerUtil;
 import com.example.petguardian.alarm.AlarmReceiver;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -49,6 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
     private String tempo;
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
+    private AlarmManagerUtil alarmManagerUtil;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         IniciarComponentes();
         createNotificationChannel();
+        alarmManagerUtil = new AlarmManagerUtil(this);
 
         bt_Data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,6 +185,8 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        String taskId = documentReference.getId();
+                        alarmManagerUtil.cancelAlarmForTask(taskId);
                         long timestamp2;
                         Calendar calendar = Calendar.getInstance();
                         calendar.setTime(selectedDate); // Definir a data selecionada
