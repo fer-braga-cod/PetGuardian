@@ -10,13 +10,13 @@ import java.util.Map;
 public class AlarmManagerUtil {
 
     private Context context;
-    private Map<String, PendingIntent> alarmMap = new HashMap<>(); // Map to store alarms
+    private Map<String, PendingIntent> alarmMap = new HashMap<>();
 
     public AlarmManagerUtil(Context context) {
         this.context = context;
     }
 
-    // Function to cancel alarm
+
     public void cancelAlarmForTask(String taskId) {
         if (alarmMap.containsKey(taskId)) {
             PendingIntent pendingIntent = alarmMap.get(taskId);
@@ -25,7 +25,5 @@ public class AlarmManagerUtil {
             alarmMap.remove(taskId);
         }
     }
-
-    // Other functions for managing alarms (if needed)
 }
 

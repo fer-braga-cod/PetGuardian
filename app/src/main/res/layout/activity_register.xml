@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Data"
+                android:text="@string/TitleReg"
                 android:textSize="30sp"
                 android:textAlignment="center"
                 android:textColor="@color/cor1"/>
@@ -50,7 +50,7 @@
                 android:background="@drawable/border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
-                android:hint="Enter topic name"
+                android:hint="@string/RegNome"
                 android:textColorHint="@color/grey"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/lavender"/>
@@ -62,7 +62,7 @@
                 android:background="@drawable/border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
-                android:hint="Enter description"
+                android:hint="@string/RegDesc"
                 android:textColorHint="@color/grey"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/lavender"/>
@@ -74,7 +74,7 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/uploadDate"
                 android:padding="16dp"
-                android:text="Enter date"
+                android:text="@string/RegData"
                 android:textAllCaps="false"
                 android:textSize="18sp"
                 android:textColor="@color/grey"
@@ -88,7 +88,7 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/uploadTime"
                 android:padding="16dp"
-                android:text="Enter time"
+                android:text="@string/RegHora"
                 android:textAllCaps="false"
                 android:textSize="18sp"
                 android:textColor="@color/grey"
@@ -98,7 +98,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Save"
+                android:text="@string/RegSalvar"
                 android:id="@+id/saveButton"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"

@@ -104,7 +104,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     private void deleteTask(int position) {
         DataClass taskToDelete = dataList.get(position);
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();  // Get current user ID
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference userRef = db.collection("Usuarios").document(userId);
         CollectionReference taskRef = userRef.collection("Tarefas");
 
@@ -112,20 +112,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 .delete()
                 .addOnSuccessListener(aVoid -> {
                     // Task deleted successfully
-                    int actualPosition = dataList.indexOf(taskToDelete); // Find actual position after update
-                    if (actualPosition > -1) {  // Check if task exists in the current list
-                        dataList.remove(actualPosition);  // Remove from list at actual position
-                        notifyItemRemoved(actualPosition);  // Update UI
+                    int actualPosition = dataList.indexOf(taskToDelete);
+                    if (actualPosition > -1) {
+                        dataList.remove(actualPosition);
+                        notifyItemRemoved(actualPosition);
                     } else {
-                        // Handle scenario where task might be removed from list by listener before this callback
-                        Log.d("MyAdapter", "Task not found in local list for deletion");
+                        Log.d("MyAdapter", "Tarefa não encontrada na lista");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        // Handle deletion failure
-                        Toast.makeText(context, "Error deleting task!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Error ao deletar tarefa", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

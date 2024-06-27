@@ -32,7 +32,6 @@ public class FormLogin extends AppCompatActivity {
     private EditText edit_email, edit_pass;
     private Button bt_entrar;
     private ProgressBar progressBar;
-    String[] mensagens = {"Preencha todos os campos!"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +59,7 @@ public class FormLogin extends AppCompatActivity {
                 String senha = edit_pass.getText().toString();
 
                 if(email.isEmpty() || senha.isEmpty()){
-                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(v, R.string.ErrorCampos, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();

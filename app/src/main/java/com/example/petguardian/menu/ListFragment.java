@@ -66,7 +66,7 @@ public class ListFragment extends Fragment {
             @Override
             public void onEvent(@Nullable QuerySnapshot snapshot, @Nullable FirebaseFirestoreException e) {
                 if (e != null) {
-                    Log.e("ListFragment", "Erro ao recuperar tarefas", e); // Registra a exceção
+                    Log.e("ListFragment", "Erro ao recuperar tarefas", e);
                     Snackbar snackbar = Snackbar.make(view, "Erro ao carregar tarefas", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
@@ -74,7 +74,7 @@ public class ListFragment extends Fragment {
                     return;
                 }
                 if (snapshot != null) {
-                    dataList.clear(); // Limpa dados existentes para evitar duplicatas
+                    dataList.clear();
                     for (DocumentSnapshot document : snapshot.getDocuments()) {
                         DataClass task = document.toObject(DataClass.class);
                         dataList.add(task);

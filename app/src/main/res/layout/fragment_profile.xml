@@ -78,7 +78,7 @@
         android:layout_margin="20dp"
         android:background="@color/cor1"
         android:padding="10dp"
-        android:text="Deslogar"
+        android:text="@string/Deslogar"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"

@@ -1,21 +1,39 @@
 <resources>
     <string name="app_name">PetGuardian</string>
+
+    //FormLogin e FormCadastro
+    <string name="ErrorCampos">Preencha todos os campos!</string>
+    <string name="HintSenha">Senha</string>
+    <string name="HintEmail">Email</string>
+    <string name="HintNome">Nome</string>
     <string name="entrar">Entrar</string>
     <string name="text_cadastro">Crie uma conta clicando aqui</string>
     <string name="title_cadastro">Cadastre-se</string>
     <string name="salvar">Salvar</string>
 
-    <string name="open_nav">Open Drawer</string>
-    <string name="close_nav">Close Drawer</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //Menu
+    <string name="Deslogar">Deslogar</string>
+    <string name="TitleHome">Home</string>
+    <string name="TitleTarefas">Tarefas</string>
+    <string name="TitlePerfil">Perfil</string>
+    <string name="TitleSair">Sair</string>
+    <string name="open_nav">Abrir</string>
+    <string name="close_nav">Fechar</string>
 
+    //Lista
+    <string name="HintBusca">Buscar...</string>
 
-    <string name="delete_confirmation">Confirmation</string>
-    <string name="sureToDelete">Are you sure you want to delete the task</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="confirmation">Completed the task!..</string>
-    <string name="sureToMarkAsComplete">Are you sure you want to mark this task as completed.</string>
-    <string name="congrats_you_have_completed_the_task_successfully">Congrats!... You have completed the task successfully..</string>
+    //Adapter
+    <string name="delete_confirmation">Confirmação</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="sureToDelete">Tem certeza que deseja deletar essa tarefa?</string>
+
+    //Register
+    <string name="TitleReg">Registro de Tarefa</string>
+    <string name="RegNome">Nome...</string>
+    <string name="RegDesc">Descrição...</string>
+    <string name="RegData">Data...</string>
+    <string name="RegHora">Hora...</string>
+    <string name="RegSalvar">Salvar</string>
 </resources>

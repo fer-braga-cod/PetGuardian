@@ -6,7 +6,8 @@
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -37,7 +38,7 @@
     <EditText
         android:id="@+id/edit_email"
         style="@style/Edit_Text"
-        android:hint="Email"
+        android:hint="@string/HintEmail"
         android:textColorHint="@color/grey"
         android:drawableRight="@drawable/ic_email"
         android:inputType="textEmailAddress"
@@ -48,7 +49,7 @@
     <EditText
         android:id="@+id/edit_pass"
         style="@style/Edit_Text"
-        android:hint="Senha"
+        android:hint="@string/HintSenha"
         android:textColorHint="@color/grey"
         android:drawableRight="@drawable/ic_lock"
         android:inputType="numberPassword"

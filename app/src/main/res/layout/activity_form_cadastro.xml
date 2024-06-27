@@ -32,7 +32,7 @@
     <EditText
         android:id="@+id/edit_nome"
         style="@style/Edit_Text"
-        android:hint="Nome"
+        android:hint="@string/HintNome"
         android:textColorHint="@color/grey"
         android:inputType="text"
         android:drawableRight="@drawable/ic_name"
@@ -43,7 +43,7 @@
     <EditText
         android:id="@+id/edit_email"
         style="@style/Edit_Text"
-        android:hint="Email"
+        android:hint="@string/HintEmail"
         android:textColorHint="@color/grey"
         android:drawableRight="@drawable/ic_email"
         android:inputType="textEmailAddress"
@@ -54,7 +54,7 @@
     <EditText
         android:id="@+id/edit_pass"
         style="@style/Edit_Text"
-        android:hint="Senha"
+        android:hint="@string/HintSenha"
         android:textColorHint="@color/grey"
         android:inputType="numberPassword"
         android:drawableRight="@drawable/ic_lock"

@@ -29,7 +29,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
 
     }
@@ -53,7 +52,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void IniciarComponentes(){
-        View view = getView(); // Obtém a referência da view do fragmento
+        View view = getView();
         assert view != null;
         nomeUser = view.findViewById(R.id.textUserName);
         emailUser = view.findViewById(R.id.textUserEmail);

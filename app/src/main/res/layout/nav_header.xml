@@ -20,7 +20,7 @@
         android:id="@+id/textnameUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="Fernando Braga"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
@@ -28,7 +28,7 @@
         android:id="@+id/textemailUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FFFFFFFFFFFFFFFFFFF"
+        android:text="fernando.braga@ufms.br"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginBottom="5dp"/>

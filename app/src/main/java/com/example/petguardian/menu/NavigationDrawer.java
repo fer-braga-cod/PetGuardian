@@ -27,7 +27,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class NavigationDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
-    private TextView nomeUser, emailUser;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String userID;
 
@@ -91,7 +90,7 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
         String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         NavigationView navigationView = findViewById(R.id.nav_view);
-        View headerView = navigationView.getHeaderView(0);// Obtém a referência para o headerLayout
+        View headerView = navigationView.getHeaderView(0);
         TextView textViewUsername = headerView.findViewById(R.id.textnameUser);
         TextView textViewEmail = headerView.findViewById(R.id.textemailUser);
 

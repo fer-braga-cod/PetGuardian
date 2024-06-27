@@ -8,17 +8,17 @@
 
         <item
             android:id="@+id/nav_home"
-            android:title="Home"
+            android:title="@string/TitleHome"
             android:icon="@drawable/nav_home"/>
 
         <item
             android:id="@+id/nav_profile"
-            android:title="Perfil"
+            android:title="@string/TitlePerfil"
             android:icon="@drawable/ic_user2"/>
 
         <item
             android:id="@+id/nav_list"
-            android:title="Tarefas"
+            android:title="@string/TitleTarefas"
             android:icon="@drawable/ic_list"/>
     </group>
 
@@ -27,7 +27,7 @@
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/nav_logout"
-                android:title="Sair"/>
+                android:title="@string/TitleSair"/>
         </menu>
     </item>
 
